@@ -3,3 +3,9 @@ html{
     font-family: sans-serif;
     background-color: rgb(183, 183, 183);
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
