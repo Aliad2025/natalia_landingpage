@@ -7,7 +7,7 @@ html {
 body {
   display: flex;
   justify-content: center;
-  
+
   height: 100vh;
   padding: 20px;
 }
@@ -24,13 +24,30 @@ body {
 }
 
 .header {
-    height: 100px;
-    ;
+    display: flex;
+    justify-content: flex-end;
+    
+
+    & .curriculum{
+        background-color: #f1f1f1;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: rgb(144, 142, 142);
+        font-size: 14px;
+
+        &:hover{
+            background-color: #8b8b8b;
+            color: #f1f1f1;
+            transition: 8s;
+        }
+    }
 }
 
 .main {
     display:flex; 
-
+    
     & .info {
         flex-grow: 1;
         height: 100%;
