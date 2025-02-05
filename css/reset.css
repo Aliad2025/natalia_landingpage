@@ -1,6 +1,10 @@
 *{
     margin:0;
-    padding:o;
+    padding:0;
     line-height: 1;
     box-sizing: border-box;
+}
+/* a veces son productivos los márgenes de las H */
+h1,h2,h3,h4,h5,p{
+    margin: 16px;
 }

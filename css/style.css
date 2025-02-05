@@ -7,9 +7,9 @@ html {
 body {
   display: flex;
   justify-content: center;
-
   height: 100vh;
   padding: 20px;
+  color: #8b8b8b;
 }
 
 #container {
@@ -52,11 +52,32 @@ body {
         flex-grow: 1;
         height: 100%;
 
+        & .saludo{
+            font-size: 25px;
+            color: #f7797d;
+
+        }
+        & .nombre{
+            font-size: 48px;
+            color:#1e1e1e;
+
+        }
+        & .profesion{
+            font-size: 18px;
+            color:#1e1e1e;
+
+
+        }
+        & .descripcion{
+
+        }
+    }
+
     }
     
     & .foto {
-        flex-grow: 1;
         height:100%;
+        flex-grow: 1;
     }
 
 }
