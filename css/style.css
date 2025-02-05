@@ -1,11 +1,50 @@
-html{
-    font-size: 16;
-    font-family: sans-serif;
-    background-color: rgb(183, 183, 183);
+html {
+  font-size: 16;
+  font-family: sans-serif;
+  background-color: rgb(183, 183, 183);
 }
 
 body {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  
+  height: 100vh;
+  padding: 20px;
+}
+
+#container {
+    width: 100%;
+    max-width: 1200px; 
+    /* 100% de lo que el padre ha conseguido teniendo en cuenta q body tiene un padding solo funcionan si el padre les ha dejado espacio físico real */
+    height: 100%;
+    background: linear-gradient(to top, #f7797d, #FBD786, #C6FFDD); 
+    border-radius: 0 0 10px;
+    box-shadow: 0 0 10px rgb(198, 198, 198);
     padding: 20px;
 }
+
+.header {
+    height: 100px;
+    ;
+}
+
+.main {
+    display:flex; 
+
+    & .info {
+        flex-grow: 1;
+        height: 100%;
+
+    }
+    
+    & .foto {
+        flex-grow: 1;
+        height:100%;
+    }
+
+}
+
+
+
+
+
