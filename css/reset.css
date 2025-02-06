@@ -4,7 +4,7 @@
     line-height: 1;
     box-sizing: border-box;
 }
-/* a veces son productivos los márgenes de las H */
+/* a veces son productivos los márgenes de las H y p */
 h1,h2,h3,h4,h5,p{
     margin: 16px;
 }

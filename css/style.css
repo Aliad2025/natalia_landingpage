@@ -1,7 +1,12 @@
+@font-face {
+    font-family: 'signika';
+    src: url(/fonts/signika.woff2) format('woff2');
+}
+
 html {
   font-size: 16;
   font-family: sans-serif;
-  background-color: rgb(183, 183, 183);
+  background-color: rgb(255, 236, 193);
 }
 
 body {
@@ -15,10 +20,10 @@ body {
 #container {
     width: 100%;
     max-width: 1200px; 
-    /* 100% de lo que el padre ha conseguido teniendo en cuenta q body tiene un padding solo funcionan si el padre les ha dejado espacio físico real */
+    /* 100% de lo que el padre (body) ha conseguido teniendo en cuenta q body tiene un padding.Solo funciona si el padre les ha dejado espacio físico real */
     height: 100%;
     background: linear-gradient(to top, #f7797d, #FBD786, #C6FFDD); 
-    border-radius: 0 0 10px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgb(198, 198, 198);
     padding: 20px;
 }
@@ -27,7 +32,6 @@ body {
     display: flex;
     justify-content: flex-end;
     
-
     & .curriculum{
         background-color: #f1f1f1;
         border: 1px solid black;
@@ -55,21 +59,27 @@ body {
         & .saludo{
             font-size: 25px;
             color: #f7797d;
-
         }
+
         & .nombre{
             font-size: 48px;
             color:#1e1e1e;
-
         }
+
         & .profesion{
             font-size: 18px;
             color:#1e1e1e;
-
-
         }
-        & .descripcion{
+/* si eres el hijo 1 ponte verde */
+            & span:nth-child(1){
+                color: green
+            }
+/* si eres el hijo 2 ponte violeta */
+            & span:nth-child(2){
+                color: violet
+            }
 
+        & .descripcion{
         }
     }
 
