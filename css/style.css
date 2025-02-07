@@ -65,7 +65,6 @@ body {
     el que hay que tocar es el main pq juntaba las dos cajas, el header está bien. No se pone display flex pq arriba ya hay uno*/
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
-    padding: 20px;
   }
 
   & .info {
@@ -100,7 +99,7 @@ body {
         color: violet;
         }
     }
-    
+
     & .descripcion {
     }
   }
