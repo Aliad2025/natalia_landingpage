@@ -18,6 +18,10 @@ body {
   color: #7e7e7e;
   /* para evitar que haga scroll down */
   overflow: hidden;
+  /* @SMARTPHONE */
+  @media screen and (max-width: 768 px) {
+    flex-direction:column-reverse;
+
 }
 
 #container {
@@ -54,10 +58,18 @@ body {
 
 .main {
     display:flex; 
+    /* @SMARTPHONE */
+    @media screen and (max-width: 768 px) {
+        flex-direction:column-reverse;
+    }
     
     & .info {
         flex-grow: 1;
         height: 100%;
+        padding: 80px;
+        /* para el movil */
+        @media screen and (max-width:768 px) {
+            padding: 0px}
 
         & .saludo{
             font-size: 25px;
@@ -104,6 +116,20 @@ body {
 }
 
 
+/* VERSION SMARTPHONE para hacer cambios en CSS a nivel estructural para hacer cambios en pantalla, cuando la pantalla este de 0 a 768 podemos pensar que es un movil. Es la medida de un iPad en vertical, lo que pongamos dentro es como si fuera CSS normal, pero es CSS para el movil, solo va a pisar lo de arriba cuando llegue a esta medida 768px*/
 
+/* QUITAR Y MOVER ARRIBA */
+@media (max-width:768px)
+/* el que hay que tocar es el main pq juntaba las dos cajas, el header está bien. No se pone display flex pq arriba ya hay uno*/
 
+/* hay que activar el scroll */
 
+body {
+    overflow: scroll;
+}
+
+main {
+    flex-direction:column-reverse;
+}
+
+/* coges la URL del LiveServer y la subes a responsivelyApp, es como el Live server, pero mejor*/
