@@ -1,13 +1,13 @@
 @font-face {
-    font-family: 'signika';
-    src: url(/fonts/signika.woff2) format('woff2');
+  font-family: "signika";
+  src: url(/fonts/signika.woff2) format("woff2");
 }
 
 html {
-  font-size: 16;
+  font-size: 16px;
   /* importante volverlo a poner en HTML el nombre que nosotros hemos elegido en font face en amarillo */
   font-family: "signika", sans-serif;
-  background-color: rgb(255, 236, 193);
+  background-color: #f1f1f1;
 }
 
 body {
@@ -15,121 +15,107 @@ body {
   justify-content: center;
   height: 100vh;
   padding: 20px;
-  color: #7e7e7e;
-  /* para evitar que haga scroll down */
+  color: #8b8b8b;
+  /* para eliminar la posibilidad de que el usuario haga scroll down */
   overflow: hidden;
-  /* @SMARTPHONE */
-  @media screen and (max-width: 768 px) {
-    flex-direction:column-reverse;
 
+  /* @SMARTPHONE - hay que activar el scroll */
+  @media screen and (max-width: 768px) {
+    overflow: scroll;
+  }
 }
 
 #container {
-    width: 100%;
-    max-width: 1200px; 
-    /* 100% de lo que el padre (body) ha conseguido teniendo en cuenta q body tiene un padding.Solo funciona si el padre les ha dejado espacio físico real */
-    height: 100%;
-    background: linear-gradient(to top, #f7797d, #FBD786, #C6FFDD); 
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgb(198, 198, 198);
-    padding: 10px, 20px;
+  width: 100%;
+  max-width: 1200px;
+  /* 100% de lo que el padre (body) ha conseguido teniendo en cuenta q body tiene un padding.Solo funciona si el padre les ha dejado espacio físico real */
+  height: 100%;
+  background: linear-gradient(to top, #f7797d, #fbd786, #c6ffdd);
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0000001a;
+  /* check if padding is only 20px */
+  padding: 10px, 20px;
 }
 
 .header {
-    display: flex;
-    justify-content: flex-end;
-    
-    & .curriculum{
-        background-color: #f1f1f1;
-        border: 1px solid black;
-        border-radius: 5px;
-        padding: 5px 10px;
-        text-decoration: none;
-        color: rgb(144, 142, 142);
-        font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  & .curriculum {
+    /* crear un botón */
+    background-color: #f1f1f1;
+    border: 1px solid #8b8b8b;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #8b8b8b;
+    font-size: 14px;
 
-        &:hover{
-            background-color: #8b8b8b;
-            color: #f1f1f1;
-            transition: 8s;
-        }
+    &:hover {
+      background-color: #8b8b8b;
+      color: #f1f1f1;
+      transition: 0.8s;
     }
+  }
 }
 
 .main {
-    display:flex; 
-    /* @SMARTPHONE */
-    @media screen and (max-width: 768 px) {
-        flex-direction:column-reverse;
+  display: flex;
+  /* @SMARTPHONE 
+    el que hay que tocar es el main pq juntaba las dos cajas, el header está bien. No se pone display flex pq arriba ya hay uno*/
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+
+  & .info {
+    /* flex-grow: 1 solo tiene sentido hacerlo cuando hay espacio sobrante */
+    height: 100%;
+    padding: 80px;
+    /* @SMARTPHONE para el movil */
+    @media screen and (max-width: 768px) {
+      padding: 0px;
+    }
+
+    & .saludo {
+      font-size: 25px;
+      color: #f7797d;
+    }
+
+    & .nombre {
+      font-size: 48px;
+      color: #1e1e1e;
+    }
+
+    & .profesion {
+      font-size: 18px;
+      color: #1e1e1e;
+    
+        /* si eres el hijo 1 ponte verde */
+        & span:nth-child(1) {
+        color: green;
+        }
+        /* si eres el hijo 2 ponte violeta */
+        & span:nth-child(2) {
+        color: violet;
+        }
     }
     
-    & .info {
-        flex-grow: 1;
-        height: 100%;
-        padding: 80px;
-        /* para el movil */
-        @media screen and (max-width:768 px) {
-            padding: 0px}
-
-        & .saludo{
-            font-size: 25px;
-            color: #f7797d;
-        }
-
-        & .nombre{
-            font-size: 48px;
-            color:#1e1e1e;
-        }
-
-        & .profesion{
-            font-size: 18px;
-            color:#1e1e1e;
-        }
-/* si eres el hijo 1 ponte verde */
-            & span:nth-child(1){
-                color: green
-            }
-/* si eres el hijo 2 ponte violeta */
-            & span:nth-child(2){
-                color: violet
-            }
-
-        & .descripcion{
-        }
+    & .descripcion {
     }
+  }
 
+  & .foto {
+    height: 100%;
+
+    & img {
+      width: 100%;
+      border: 15px solid #f1f1f1;
+      border-radius: 20px;
+      background-color: #fbd786;
     }
-    
-    & .foto {
-        height:100%;
-        flex-grow: 1;
-
-        $ img {
-            width: 100%;
-            /* al hacer el borde del mismo color del body  */
-            border: 15 px solid #f1f1f1;
-            height: 100%;
-            background-color: #8b8b8b;
-        }
-    }
-
+  }
 }
-
-
 /* VERSION SMARTPHONE para hacer cambios en CSS a nivel estructural para hacer cambios en pantalla, cuando la pantalla este de 0 a 768 podemos pensar que es un movil. Es la medida de un iPad en vertical, lo que pongamos dentro es como si fuera CSS normal, pero es CSS para el movil, solo va a pisar lo de arriba cuando llegue a esta medida 768px*/
-
-/* QUITAR Y MOVER ARRIBA */
-@media (max-width:768px)
-/* el que hay que tocar es el main pq juntaba las dos cajas, el header está bien. No se pone display flex pq arriba ya hay uno*/
-
-/* hay que activar el scroll */
-
-body {
-    overflow: scroll;
-}
-
-main {
-    flex-direction:column-reverse;
-}
 
 /* coges la URL del LiveServer y la subes a responsivelyApp, es como el Live server, pero mejor*/
